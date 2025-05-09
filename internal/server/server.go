@@ -8,7 +8,7 @@ import (
 	"syscall"
 	"time"
 
-	"github.com/ayberkgezer/gmail-smtp-fiber/internal/app/config"
+	"github.com/ayberkgezer/gmail-smtp-fiber/internal/config"
 	"github.com/gofiber/fiber/v2"
 )
 

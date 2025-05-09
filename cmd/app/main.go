@@ -1,7 +1,7 @@
 package main
 
 import (
-	"github.com/ayberkgezer/gmail-smtp-fiber/internal/app/server"
+	"github.com/ayberkgezer/gmail-smtp-fiber/internal/server"
 	"github.com/gofiber/fiber/v2"
 )
 
