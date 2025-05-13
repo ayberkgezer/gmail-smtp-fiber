@@ -1,32 +1,32 @@
 package base
 
-type BaseResponse struct {
+type Response struct {
 	Code    int    `json:"statusCode"`
 	Message string `json:"message,omitempty"`
 	Success bool   `json:"success"`
 }
 
-type BaseResponseWithData struct {
-	BaseResponse
+type ResponseWithData struct {
+	Response
 	Data any `json:"data"`
 }
 
 type ErrorResponse struct {
-	BaseResponse
+	Response
 	ErrorMessage string `json:"errorMessage"`
 }
 
-func NewBaseResponse(code int, message string) *BaseResponse {
-	return &BaseResponse{
+func NewBaseResponse(code int, message string) *Response {
+	return &Response{
 		Code:    code,
 		Message: message,
 		Success: true,
 	}
 }
 
-func NewBaseResponseWithData(code int, message string, success bool, data any) *BaseResponseWithData {
-	return &BaseResponseWithData{
-		BaseResponse: BaseResponse{
+func NewBaseResponseWithData(code int, message string, success bool, data any) *ResponseWithData {
+	return &ResponseWithData{
+		Response: Response{
 			Code:    code,
 			Message: message,
 			Success: true,
@@ -37,7 +37,7 @@ func NewBaseResponseWithData(code int, message string, success bool, data any) *
 
 func NewErrorResponse(code int, errorMessage string) *ErrorResponse {
 	return &ErrorResponse{
-		BaseResponse: BaseResponse{
+		Response: Response{
 			Code:    code,
 			Success: false,
 		},
