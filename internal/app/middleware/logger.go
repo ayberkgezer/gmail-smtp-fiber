@@ -1,9 +1,9 @@
 package middleware
 
 import (
-	"log"
 	"time"
 
+	"github.com/ayberkgezer/gocolorlog"
 	"github.com/gofiber/fiber/v2"
 )
 
@@ -22,30 +22,6 @@ func Logger(ctx *fiber.Ctx) error {
 	method := ctx.Method()
 	path := ctx.OriginalURL()
 
-	var color, level string
-	switch {
-	case status >= 500:
-		color = colorRed
-		level = "ERROR"
-	case status >= 400:
-		color = colorYellow
-		level = "WARN"
-	default:
-		color = colorGreen
-		level = "INFO"
-	}
-
-	log.Printf(
-		"%s[%s]%s %s %s → %d (%s)",
-		color, level, colorReset,
-		method, path, status, latency,
-	)
-
-	if err != nil {
-		log.Printf(
-			"%s[ERROR]%s handler error: %v",
-			colorRed, colorReset, err,
-		)
-	}
+	gocolorlog.HTTP(status, method, path, latency, err)
 	return err
 }

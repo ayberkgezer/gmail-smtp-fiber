@@ -12,7 +12,7 @@ import (
 	"github.com/ayberkgezer/gmail-smtp-fiber/internal/config"
 	"github.com/ayberkgezer/gmail-smtp-fiber/internal/server"
 	"github.com/gofiber/fiber/v2"
-	"github.com/gofiber/fiber/v2/middleware/recover" // Fiber'ın recover middleware'i import edildi
+	"github.com/gofiber/fiber/v2/middleware/recover"
 )
 
 func main() {
