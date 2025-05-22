@@ -27,3 +27,4 @@ go.work.sum
 .ropeproject
 .DS_Store
 bin
+.idea
