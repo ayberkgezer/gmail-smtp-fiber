@@ -2,13 +2,15 @@ package services
 
 import (
 	"context"
+	"fmt"
 
-	"github.com/ayberkgezer/gmail-smtp-fiber/internal/app/model/request"
+	"github.com/ayberkgezer/gmail-smtp-fiber/internal/domain"
+	"github.com/ayberkgezer/gocolorlog"
 )
 
 // IEmailService e-posta gönderme işini soyutlar
 type IEmailService interface {
-	SendMail(ctx context.Context, req request.EmailRequest) error
+	SendMail(ctx context.Context, email *domain.Email, reqID string) error
 }
 
 // emailService, IEmailSender'ı kullanarak mail yollar
@@ -22,8 +24,9 @@ func NewEmailService(sender IEmailSender) IEmailService {
 }
 
 // SendMail, request içindeki alanları alıp SMTP sender’a iletir
-func (s *emailService) SendMail(ctx context.Context, req request.EmailRequest) error {
-	subject := req.Name
-	body := req.EmailMessage
-	return s.sender.Send(ctx, req.Email, subject, body)
+func (s *emailService) SendMail(ctx context.Context, email *domain.Email, reqID string) error {
+	defer gocolorlog.Infof("emailService.SendMail RequestId:%s", reqID)
+	subject := fmt.Sprintf("From:%s", email.SenderName)
+	emailBody := fmt.Sprintf("From:%s \nMessage:%s", email.SenderEmail, email.Body)
+	return s.sender.Send(ctx, subject, emailBody, reqID)
 }

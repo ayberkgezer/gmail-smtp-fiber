@@ -2,6 +2,12 @@ github.com/andybalholm/brotli v1.1.1 h1:PR2pgnyFznKEugtsUo0xLdDop5SKXd5Qf5ysW+7X
 github.com/andybalholm/brotli v1.1.1/go.mod h1:05ib4cKhjx3OQYUY22hTVd34Bc8upXjOLL2rKwwZBoA=
 github.com/ayberkgezer/gocolorlog v1.1.0 h1:ksJerGmZBtBGMyHzLbYbij+PenLul4QG0ekmnqm0E1k=
 github.com/ayberkgezer/gocolorlog v1.1.0/go.mod h1:9hcm/8q8nUdRVjICJl69l7SXh1dGdbLT75WIucHc31Q=
+github.com/ayberkgezer/gocolorlog v1.1.1 h1:iFN2cBYrgWv2jpPbYxjSf1XgLUcRYU54ZihkxE5ZJQQ=
+github.com/ayberkgezer/gocolorlog v1.1.1/go.mod h1:9hcm/8q8nUdRVjICJl69l7SXh1dGdbLT75WIucHc31Q=
+github.com/ayberkgezer/gocolorlog v1.2.0 h1:ZSgfvHTXuXqxJtG97hq7tNBFFyY5gEcqUQrbFGRQ7pw=
+github.com/ayberkgezer/gocolorlog v1.2.0/go.mod h1:9hcm/8q8nUdRVjICJl69l7SXh1dGdbLT75WIucHc31Q=
+github.com/ayberkgezer/gocolorlog v1.2.1 h1:3dEsyf7L+rZ/gZK3KbwD7gGhXiYC78xZ+IINufh4bhc=
+github.com/ayberkgezer/gocolorlog v1.2.1/go.mod h1:9hcm/8q8nUdRVjICJl69l7SXh1dGdbLT75WIucHc31Q=
 github.com/davecgh/go-spew v1.1.1 h1:vj9j/u1bqnvCEfJOwUhtlOARqs3+rkHYY13jYWTU97c=
 github.com/davecgh/go-spew v1.1.1/go.mod h1:J7Y8YcW2NihsgmVo/mv3lAwl/skON4iLHjSsI+c5H38=
 github.com/gabriel-vasile/mimetype v1.4.8 h1:FfZ3gj38NjllZIeJAmMhr+qKL8Wu+nOoI3GqacKw1NM=

@@ -3,13 +3,13 @@ package handler
 import (
 	"context"
 
-	"github.com/ayberkgezer/gmail-smtp-fiber/internal/app/model/request"
 	"github.com/ayberkgezer/gmail-smtp-fiber/internal/app/services"
+	"github.com/ayberkgezer/gmail-smtp-fiber/internal/domain"
+	"github.com/ayberkgezer/gocolorlog"
 )
 
-// IEmailHandler e-posta iş mantığını soyutlar
 type IEmailHandler interface {
-	HandleEmail(ctx context.Context, req request.EmailRequest) error
+	HandleEmail(ctx context.Context, email *domain.Email, reqID string) error
 }
 
 type EmailHandler struct {
@@ -20,7 +20,7 @@ func NewEmailHandler(s services.IEmailService) IEmailHandler {
 	return &EmailHandler{service: s}
 }
 
-// sadece service çağırır
-func (h *EmailHandler) HandleEmail(ctx context.Context, req request.EmailRequest) error {
-	return h.service.SendMail(ctx, req)
+func (h *EmailHandler) HandleEmail(ctx context.Context, email *domain.Email, reqID string) error {
+	defer gocolorlog.Infof("EmailHandler.HandleEmail RequestID:%s", reqID)
+	return h.service.SendMail(ctx, email, reqID)
 }

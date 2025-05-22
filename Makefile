@@ -8,6 +8,9 @@ build:
 	go build -o bin/app ./cmd/app
 
 run:
+	./bin/app
+
+dev:
 	go run cmd/app/main.go
 
 clean:
@@ -26,6 +29,7 @@ help:
 	@echo "  all     - Build the project"
 	@echo "  build   - Build the project"
 	@echo "  run     - Run the project"
+	@echo "  dev     - Run the project in development"
 	@echo "  clean   - Clean up build artifacts"
 	@echo "  fmt     - Format the code"
 	@echo "  tidy    - Tidy up go modules"
